@@ -29,13 +29,13 @@ Sign-in uses Google's own account and consent screens, governed by Google's Priv
 
 ## Usage analytics and crash reports
 
-The app uses Google Firebase Analytics and Firebase Crashlytics, which run on all installs whether or not you sign in.
+The app uses Google Firebase Analytics and Firebase Crashlytics, which are on by default, whether or not you sign in, and which you can switch off at any time.
 
 - **Analytics** records how the app is used so the developer can improve it: which screens are opened, when a meal is marked delivered or skipped (and for which meal slot), when the day sheet or share option is used, which setting was changed (the setting's name, and for toggles and theme the new value), and whether you signed in or out. It also keeps a few broad profile properties such as how many meals you track and whether auto-mark, reminders and dark theme are on. Firebase assigns a random app-instance ID to each install and may derive approximate location from the IP address.
 - **Crash reports** record technical details when the app crashes: the error and stack trace, device model, Android version and app version.
 - **Never sent:** your name, the price you enter, your dates, your amounts, or your email address. These events do not contain your tiffin records.
 
-This data is processed by Google on the developer's behalf. See https://firebase.google.com/support/privacy for details. Analytics and crash reporting are switched off in development builds. To stop analytics, you can reset your advertising ID in Android settings or uninstall the app; the app does not currently offer an in-app switch.
+This data is processed by Google on the developer's behalf. See https://firebase.google.com/support/privacy for details. Analytics and crash reporting are switched off in development builds. To stop both, turn off Settings, Privacy, "Share usage data and crash reports". The app then collects no analytics events or crash reports. Your choice is saved with your settings, so it is also kept in your backup if you sign in.
 
 ## Advertising
 
