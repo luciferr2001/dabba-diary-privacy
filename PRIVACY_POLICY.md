@@ -6,7 +6,7 @@ Dabba Diary ("the app") is a tiffin and meal-subscription tracker developed by R
 
 ## Summary
 
-Dabba Diary works fully offline. Your name, your meal prices and your daily delivered or skipped marks are stored on your device, and no account is needed. Signing in with Google is optional and exists for one reason: to back up your data so you can restore it on a new phone. If you never sign in, none of your tiffin data leaves your device. The app shows ads through Google AdMob, described below.
+Dabba Diary works fully offline. Your name, your meal prices and your daily delivered or skipped marks are stored on your device, and no account is needed. Signing in with Google is optional and exists for one reason: to back up your data so you can restore it on a new phone. If you never sign in, none of your tiffin data leaves your device. The app uses Firebase Analytics and Crashlytics to understand how it is used and to fix crashes, and shows ads through Google AdMob. Both are described below.
 
 ## Data stored on your device
 
@@ -27,6 +27,16 @@ While you are signed in, each change you make is also written to your backup. Si
 
 Sign-in uses Google's own account and consent screens, governed by Google's Privacy Policy: https://policies.google.com/privacy
 
+## Usage analytics and crash reports
+
+The app uses Google Firebase Analytics and Firebase Crashlytics, which run on all installs whether or not you sign in.
+
+- **Analytics** records how the app is used so the developer can improve it: which screens are opened, when a meal is marked delivered or skipped (and for which meal slot), when the day sheet or share option is used, which setting was changed (the setting's name, and for toggles and theme the new value), and whether you signed in or out. It also keeps a few broad profile properties such as how many meals you track and whether auto-mark, reminders and dark theme are on. Firebase assigns a random app-instance ID to each install and may derive approximate location from the IP address.
+- **Crash reports** record technical details when the app crashes: the error and stack trace, device model, Android version and app version.
+- **Never sent:** your name, the price you enter, your dates, your amounts, or your email address. These events do not contain your tiffin records.
+
+This data is processed by Google on the developer's behalf. See https://firebase.google.com/support/privacy for details. Analytics and crash reporting are switched off in development builds. To stop analytics, you can reset your advertising ID in Android settings or uninstall the app; the app does not currently offer an in-app switch.
+
 ## Advertising
 
 The app shows banner ads provided by Google AdMob. To serve and measure ads, the AdMob SDK collects and processes data such as your device's advertising ID, IP address, approximate location derived from the IP address, device and app information, and how you interact with ads. This is collected by Google under its own policies, not by the developer:
@@ -39,13 +49,13 @@ If you are in the European Economic Area, the United Kingdom or Switzerland, the
 
 ## What the app does not do
 
-The app does not access your contacts, camera, microphone, photos or precise location. It does not sell your data, and it does not use Firebase Analytics or crash-reporting services.
+The app does not access your contacts, camera, microphone, photos or precise location. It does not sell your data.
 
 ## Permissions
 
 - Internet and network state: for ads and, if you sign in, backup.
 - Notifications: to show your optional daily reminder.
-- Exact alarms and boot completed: to deliver the reminder on time and after a restart.
+- Boot completed: to restore your daily reminder after the phone restarts. The reminder uses a standard (inexact) schedule, so it can arrive a few minutes after the chosen time.
 
 ## Deleting your data
 
@@ -54,7 +64,7 @@ The app does not access your contacts, camera, microphone, photos or precise loc
 
 ## Data retention
 
-Local data stays until you delete it or uninstall the app. Cloud backup data stays until you delete your account. Ad-related data held by Google follows Google's retention practices.
+Local data stays until you delete it or uninstall the app. Cloud backup data stays until you delete your account. Analytics and crash data are retained by Firebase according to its standard retention settings (up to 14 months for analytics event data). Ad-related data held by Google follows Google's retention practices.
 
 ## Security
 
