@@ -35,7 +35,7 @@ The app uses Google Firebase Analytics and Firebase Crashlytics, which are on by
 - **Crash reports** record technical details when the app crashes: the error and stack trace, device model, Android version and app version.
 - **Never sent:** your name, the price you enter, your dates, your amounts, or your email address. These events do not contain your tiffin records.
 
-This data is processed by Google on the developer's behalf. See https://firebase.google.com/support/privacy for details. Analytics and crash reporting are switched off in development builds. To stop both, turn off Settings, Privacy, "Share usage data and crash reports". The app then collects no analytics events or crash reports. Your choice is saved with your settings, so it is also kept in your backup if you sign in.
+This data is processed by Google on the developer's behalf. See https://firebase.google.com/support/privacy for details. Analytics and crash reporting are switched off in development builds. If you are in the European Economic Area, the United Kingdom or Switzerland, analytics and crash reports start only after you accept them in the consent message (the same one used for ads), and "Ad privacy options" in Settings lets you change that choice. To stop both at any time, turn off Settings, Privacy, "Share usage data and crash reports". The app then collects no analytics events or crash reports. Your choice is saved with your settings, so it is also kept in your backup if you sign in. The app also links to this policy from Settings, Privacy.
 
 ## Advertising
 
